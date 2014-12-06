@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Territory description:</strong>
+  <%= @territory.territory_description %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @territory.region %>
+</p>
+
+<%= link_to 'Edit', edit_territory_path(@territory) %> |
+<%= link_to 'Back', territories_path %>

@@ -1,0 +1,17 @@
+<%= form_for(@employee_territory) do |f| %>
+  <% if @employee_territory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee_territory.errors.count, "error") %> prohibited this employee_territory from being saved:</h2>
+
+      <ul>
+      <% @employee_territory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

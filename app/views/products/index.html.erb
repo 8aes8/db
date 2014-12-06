@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity per Unit</th>
+      <th>Units in Stock</th>
+      <th>Units on Order</th>
+      <th>Reorder Level</th>
+      <th>Discontinued</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.product_name %></td>
+        <td><%= product.quantity_per_unit %></td>
+        <td><%= product.units_in_stock %></td>
+        <td><%= product.units_on_order %></td>
+        <td><%= product.reorder_level %></td>
+        <td><%= product.discontinued %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

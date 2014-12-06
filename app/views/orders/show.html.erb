@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer %>
+</p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @order.order_date %>
+</p>
+
+<p>
+  <strong>Required date:</strong>
+  <%= @order.required_date %>
+</p>
+
+<p>
+  <strong>Shipped date:</strong>
+  <%= @order.shipped_date %>
+</p>
+
+<p>
+  <strong>Ship via:</strong>
+  <%= @order.ship_via %>
+</p>
+
+<p>
+  <strong>Ship name:</strong>
+  <%= @order.ship_name %>
+</p>
+
+<p>
+  <strong>Ship address:</strong>
+  <%= @order.ship_address %>
+</p>
+
+<p>
+  <strong>Ship city:</strong>
+  <%= @order.ship_city %>
+</p>
+
+<p>
+  <strong>Ship region:</strong>
+  <%= @order.ship_region %>
+</p>
+
+<p>
+  <strong>Ship postal code:</strong>
+  <%= @order.ship_postal_code %>
+</p>
+
+<p>
+  <strong>Ship country:</strong>
+  <%= @order.ship_country %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

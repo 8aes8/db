@@ -1,0 +1,45 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Order date</th>
+      <th>Required date</th>
+      <th>Shipped date</th>
+      <th>Ship via</th>
+      <th>Ship name</th>
+      <th>Ship address</th>
+      <th>Ship city</th>
+      <th>Ship region</th>
+      <th>Ship postal code</th>
+      <th>Ship country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.customer %></td>
+        <td><%= order.order_date %></td>
+        <td><%= order.required_date %></td>
+        <td><%= order.shipped_date %></td>
+        <td><%= order.ship_via %></td>
+        <td><%= order.ship_name %></td>
+        <td><%= order.ship_address %></td>
+        <td><%= order.ship_city %></td>
+        <td><%= order.ship_region %></td>
+        <td><%= order.ship_postal_code %></td>
+        <td><%= order.ship_country %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
