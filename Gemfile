@@ -37,4 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+# devise - do uwierzytelniania
+gem 'devise', '~> 3.4.1'
+# mailcatcher
+gem 'mailcatcher', group: :development
