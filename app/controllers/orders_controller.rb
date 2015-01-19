@@ -28,9 +28,10 @@ class OrdersController < ApplicationController
     # przypisanie aktualnego użytkownika do zamówienia
     @order.customer = current_customer
 
-
     respond_to do |format|
       if @order.save
+        #wysłanie maila
+        AdminMailer.order_notification(@order).deliver
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
