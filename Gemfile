@@ -41,3 +41,6 @@ gem 'spring',        group: :development
 gem 'devise', '~> 3.4.1'
 # mailcatcher
 gem 'mailcatcher', group: :development
+# ficzery do developmentu
+gem 'pry-rails', group: :development
+gem 'hirb', group: :development

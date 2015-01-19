@@ -25,6 +25,9 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    # przypisanie aktualnego użytkownika do zamówienia
+    @order.customer = current_customer
+
 
     respond_to do |format|
       if @order.save
@@ -69,6 +72,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:customer, :order_date, :required_date, :shipped_date, :ship_via, :ship_name, :ship_address, :ship_city, :ship_region, :ship_postal_code, :ship_country)
+      params.require(:order).permit(:order_date, :required_date, :shipped_date, :ship_via, :ship_name, :ship_address, :ship_city, :ship_region, :ship_postal_code, :ship_country)
     end
 end
