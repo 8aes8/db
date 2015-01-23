@@ -24,8 +24,8 @@
         <td><%= product.units_on_order %></td>
         <td><%= product.reorder_level %></td>
         <td><%= product.discontinued %></td>
-        <td><%= product.category %></td>
-        <td><%= product.supplier %></td>
+        <td><%= product.category.blank? ? '&mdash;'.html_safe : product.category.category_name %></td>
+        <td><%= product.supplier.blank? ? '&mdash;'.html_safe : product.supplier.company_name %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
