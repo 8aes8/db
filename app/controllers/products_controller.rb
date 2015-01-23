@@ -25,13 +25,9 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    # przypisanie aktualnego użytkownika do zamówienia
-    @product.customer = current_customer
 
     respond_to do |format|
       if @product.save
-        #wysłanie maila
-        AdminMailer.product_notification(@product).deliver
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -73,6 +69,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_name, :quantity_per_unit, :units_in_stock, :units_on_order, :reorder_level, :discontinued, :created_at, :updated_at, :category_id, :supplier_id)
+      params.require(:product).permit(:product_name, :quantity_per_unit, :units_in_stock, :units_on_order, :reorder_level, :discontinued, :category_id, :supplier_id)
     end
 end
